@@ -1,1 +1,12 @@
 /* Add application styles & imports to this file! */
+
+:root {
+  --main-bg-color: #1e1125;
+  --main-ft-color: #e0e0e0;
+  --game-max-width: 500px;
+}
+
+html {
+  background-color: var(--main-bg-color);
+  color: var(--main-ft-color);
+}
