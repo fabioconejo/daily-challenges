@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'game-selector',
+  selector: 'app-game-selector',
   templateUrl: './game-selector.component.html',
-  styleUrls: ['./game-selector.component.css'],
+  styleUrls: ['./game-selector.component.css']
 })
 export class GameSelectorComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit() {}
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }
