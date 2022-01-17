@@ -8,5 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class FiveWordsComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    document.documentElement.style.setProperty('--main-bg-color', '#1e1125');
+    document.documentElement.style.setProperty('--key-bg', '#180a20');
+  }
 }
