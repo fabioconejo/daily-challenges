@@ -1,7 +1,7 @@
 :host {
   height: var(--keyboard-height);
-  --key-bg: #180a20;
 }
+
 #keyboard {
   margin: 0 8px;
   user-select: none;

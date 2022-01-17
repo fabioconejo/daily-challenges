@@ -1,0 +1,10 @@
+:host {
+  --key-bg: #180a20;
+  --main-bg-color: #1e1125;
+  --main-ft-color: #e0e0e0;
+}
+
+::ng-deep html {
+  background-color: var(--main-bg-color);
+  color: var(--main-ft-color);
+}
