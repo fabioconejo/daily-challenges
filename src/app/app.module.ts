@@ -7,6 +7,7 @@ import { GameSpaceComponent } from './game-space/game-space.component';
 import { FiveWordsComponent } from './game-space/five-words/five-words.component';
 import { HeaderComponent } from './game-space/game-elements/header/header.component';
 import { KeyboardComponent } from './game-space/game-elements/keyboard/keyboard.component';
+import { SlotComponent } from './game-space/game-elements/slot/slot.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -16,6 +17,7 @@ import { KeyboardComponent } from './game-space/game-elements/keyboard/keyboard.
     FiveWordsComponent,
     HeaderComponent,
     KeyboardComponent,
+    SlotComponent,
   ],
   bootstrap: [AppComponent],
 })
