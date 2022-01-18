@@ -15,6 +15,14 @@
   animation-duration: 1000ms;
 }
 
+#board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
 @keyframes Bounce {
   0%,
   20% {
