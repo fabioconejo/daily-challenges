@@ -23,11 +23,17 @@
   --game-max-width: 500px;
 }
 
-html {
-  background-color: var(--main-bg-color);
-  color: var(--main-ft-color);
-}
-
 * {
   user-select: none;
+}
+
+html,
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-ft-color);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  display: block;
 }

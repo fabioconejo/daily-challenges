@@ -18,4 +18,10 @@ export class WordComponent implements OnInit {
     );
     this.letters = new Array(+this.wordLength);
   }
+
+  public getStyles() {
+    return {
+      'grid-template-columns': `repeat(${this.wordLength}, 1fr)`,
+    };
+  }
 }
