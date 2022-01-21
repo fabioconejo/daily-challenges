@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FiveWordsComponent implements OnInit {
   currentWordLength: number = 5;
   currentWord: any = new Array(this.currentWordLength);
-  lock: any = [0, 0, 0, 0, 0];
+  lock: any = new Array(this.currentWordLength);
   index = 0;
 
   constructor() {}
