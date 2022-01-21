@@ -1,7 +1,3 @@
 <div class="row">
-  <game-slot></game-slot>
-  <game-slot></game-slot>
-  <game-slot></game-slot>
-  <game-slot></game-slot>
-  <game-slot></game-slot>
+  <game-slot *ngFor="let in of letters; let i = index"></game-slot>
 </div>
