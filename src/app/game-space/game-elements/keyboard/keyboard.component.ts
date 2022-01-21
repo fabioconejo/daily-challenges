@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'keyboard',
@@ -6,11 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./keyboard.component.css'],
 })
 export class KeyboardComponent implements OnInit {
+  @Output() letter = new EventEmitter();
+
   constructor() {}
 
   ngOnInit() {}
-
-  public typeLetter(letter: string) {
-    console.log(letter);
-  }
 }
