@@ -11,5 +11,6 @@ export class FiveWordsComponent implements OnInit {
   ngOnInit() {
     document.documentElement.style.setProperty('--main-bg-color', '#1e1125');
     document.documentElement.style.setProperty('--key-bg', '#180a20');
+    document.documentElement.style.setProperty('--slot-brd', '#483a50');
   }
 }
