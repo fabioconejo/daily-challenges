@@ -12,9 +12,8 @@ import {
   styleUrls: ['./word.component.css'],
 })
 export class WordComponent implements OnInit, OnChanges {
-  @Input() word: string;
   @Input() wordLength: string;
-  letters: any;
+  @Input() letters: any;
 
   constructor() {}
 
@@ -23,14 +22,9 @@ export class WordComponent implements OnInit, OnChanges {
       '--word-length',
       this.wordLength
     );
-    this.letters = new Array(+this.wordLength);
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if(changes.word) {
-      console.log(changes.word.currentValue);
-    }
-  }
+  ngOnChanges(changes: SimpleChanges) {}
 
   public getStyles() {
     return {

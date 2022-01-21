@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiveWordsComponent implements OnInit {
   currentWordLength: number = 5;
-  currentWord: string = '';
+  currentWord: any = new Array(this.currentWordLength);
 
   constructor() {}
 
@@ -15,6 +15,10 @@ export class FiveWordsComponent implements OnInit {
     document.documentElement.style.setProperty('--main-bg-color', '#1e1125');
     document.documentElement.style.setProperty('--key-bg', '#180a20');
     document.documentElement.style.setProperty('--slot-brd', '#483a50');
+
+    for (let i = 0; i < this.currentWordLength; i++) {
+      this.currentWord[i] = ' ';
+    }
   }
 
   typeLetter(letter: any) {
