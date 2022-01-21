@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./five-words.component.css'],
 })
 export class FiveWordsComponent implements OnInit {
+  wordList: any = new Array(5);
+  wordTemplate: string = '  eck';
   currentWordLength: number = 5;
   currentWord: any = new Array(this.currentWordLength);
   lock: any = new Array(this.currentWordLength);
@@ -19,10 +21,10 @@ export class FiveWordsComponent implements OnInit {
     document.documentElement.style.setProperty('--slot-brd', '#483a50');
     document.documentElement.style.setProperty('--slot-lock', '#483a50');
 
-    this.currentWord = '  ec '.split('');
+    this.currentWord = this.wordTemplate.split('');
 
     for (let i = 0; i < this.currentWord.length; i++) {
-      this.lock[i] = (this.currentWord[i] !== ' ');
+      this.lock[i] = this.currentWord[i] !== ' ';
     }
   }
 
