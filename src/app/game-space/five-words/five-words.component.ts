@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./five-words.component.css'],
 })
 export class FiveWordsComponent implements OnInit {
+  currentWordLength: number = 5;
+  currentWord: string = '';
+
   constructor() {}
 
   ngOnInit() {
@@ -15,6 +18,8 @@ export class FiveWordsComponent implements OnInit {
   }
 
   typeLetter(letter: any) {
-    console.log(letter);
+    if (this.currentWord.length < this.currentWordLength) {
+      this.currentWord += letter;
+    }
   }
 }
