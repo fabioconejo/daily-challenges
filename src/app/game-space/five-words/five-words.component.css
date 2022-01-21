@@ -16,6 +16,14 @@
   animation-duration: 1000ms;
 }
 
+#board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 5 px;
+  padding: 10 px;
+  box-sizing: border-box;
+}
+
 #board-container {
   display: flex;
   justify-content: center;
