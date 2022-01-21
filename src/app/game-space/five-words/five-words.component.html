@@ -1,12 +1,32 @@
 <game-header gameName="5 WORDS"></game-header>
 <div id="board-container">
   <div id="board" style="width: 350px; height: 420px;">
-    <game-word wordLength="5" [letters]="this.wordList[0]" [lock]="this.lock"></game-word>
-    <game-word wordLength="5" [letters]="this.wordList[1]"></game-word>
-    <game-word wordLength="5" [letters]="this.wordList[2]"></game-word>
-    <game-word wordLength="5" [letters]="this.wordList[3]"></game-word>
-    <game-word wordLength="5" [letters]="this.wordList[4]"></game-word>
+    <game-word
+      wordLength="5"
+      [letters]="this.wordList[0]"
+      [lock]="this.lock"
+    ></game-word>
+    <game-word
+      wordLength="5"
+      [letters]="this.wordList[1]"
+      [lock]="this.lock"
+    ></game-word>
+    <game-word
+      wordLength="5"
+      [letters]="this.wordList[2]"
+      [lock]="this.lock"
+    ></game-word>
+    <game-word
+      wordLength="5"
+      [letters]="this.wordList[3]"
+      [lock]="this.lock"
+    ></game-word>
+    <game-word
+      wordLength="5"
+      [letters]="this.wordList[4]"
+      [lock]="this.lock"
+    ></game-word>
   </div>
 </div>
 
-<keyboard (letter)="typeLetter($event)" (backspace)="removeLetter()"></keyboard>
+<keyboard (letter)="typeLetter($event)" (backspace)="removeLetter()" (enter)="pressEnter()"></keyboard>

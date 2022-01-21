@@ -25,7 +25,9 @@
     <div class="spacer half"></div>
   </div>
   <div class="row">
-    <button data-key="↵" class="one-and-a-half">enter</button>
+    <button data-key="↵" (click)="this.enter.emit()" class="one-and-a-half">
+      enter
+    </button>
     <button data-key="z" (click)="this.letter.emit('z')">z</button>
     <button data-key="x" (click)="this.letter.emit('x')">x</button>
     <button data-key="c" (click)="this.letter.emit('c')">c</button>

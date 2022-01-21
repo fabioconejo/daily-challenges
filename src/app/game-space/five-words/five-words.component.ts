@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
-  wordTemplate: string = '  eck';
-  currentWordLength: number = 5;
+  wordTemplate: string = '   c ';
+  currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   lock: any = new Array(this.currentWordLength);
   index = 0;
@@ -61,5 +61,9 @@ export class FiveWordsComponent implements OnInit {
       this.index--;
       this.currentWord[this.index] = ' ';
     }
+  }
+
+  pressEnter() {
+    
   }
 }
