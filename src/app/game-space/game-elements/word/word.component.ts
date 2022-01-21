@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'game-word',
@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./word.component.css'],
 })
 export class WordComponent implements OnInit {
-  letters;
+  @Input() wordLength: string;
+  letters: any;
 
   constructor() {}
 
   ngOnInit() {
-    this.letters = new Array(5); 
+    this.letters = new Array(+this.wordLength);
   }
 }
