@@ -22,7 +22,7 @@ export class FiveWordsComponent implements OnInit {
     this.currentWord = '  ec '.split('');
 
     for (let i = 0; i < this.currentWord.length; i++) {
-      this.lock[i] = this.currentWord[i] !== ' ';
+      this.lock[i] = (this.currentWord[i] !== ' ');
     }
   }
 
