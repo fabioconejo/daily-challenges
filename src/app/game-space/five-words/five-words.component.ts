@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FiveWordsComponent implements OnInit {
   currentWordLength: number = 5;
   currentWord: any = new Array(this.currentWordLength);
-  lock: any = [0, 0, 0, 1, 1];
+  lock: any = [0, 0, 1, 1, 0];
   index = 0;
 
   constructor() {}
@@ -18,16 +18,16 @@ export class FiveWordsComponent implements OnInit {
     document.documentElement.style.setProperty('--key-bg', '#180a20');
     document.documentElement.style.setProperty('--slot-brd', '#483a50');
 
-    this.currentWord = '   ck'.split('');
+    this.currentWord = '  ec '.split('');
   }
 
   typeLetter(letter: any) {
-    while (this.index < this.currentWordLength && this.lock[this.index]) {
+    if (this.index < this.currentWordLength) {
+      this.currentWord[this.index] = letter;
       this.index++;
     }
 
-    if (this.index < this.currentWordLength) {
-      this.currentWord[this.index] = letter;
+    while (this.index < this.currentWordLength && this.lock[this.index]) {
       this.index++;
     }
   }

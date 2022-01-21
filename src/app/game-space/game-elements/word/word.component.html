@@ -1,6 +1,7 @@
 <div class="row" [ngStyle]="getStyles()">
   <game-slot
     *ngFor="let in of letters; let i = index"
-    letter="{{ letters[i] }}"
+    [letter]="letters[i]"
+    [lock]="lock[i]"
   ></game-slot>
 </div>

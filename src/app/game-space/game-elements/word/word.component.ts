@@ -14,6 +14,7 @@ import {
 export class WordComponent implements OnInit, OnChanges {
   @Input() wordLength: string;
   @Input() letters: any;
+  @Input() lock: any;
 
   constructor() {}
 
