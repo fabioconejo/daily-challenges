@@ -10,7 +10,7 @@ export class KeyboardComponent implements OnInit {
 
   ngOnInit() {}
 
-  write(letter: string) {
+  public type(letter: string) {
     console.log(letter);
   }
 }
