@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
   statesList: any = new Array(5);
-  wordTemplate: string = '   c ';
+  wordTemplate: string = '  a a';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   states: any = new Array(this.currentWordLength);
@@ -50,15 +50,15 @@ export class FiveWordsComponent implements OnInit {
 
   typeLetter(letter: any) {
     if (this.indexList < this.wordList.length) {
-      if (this.index < this.currentWordLength) {
-        this.currentWord[this.index] = letter;
-        this.index++;
-      }
-
       while (
         this.index < this.currentWordLength &&
         this.states[this.index] === 'lock'
       ) {
+        this.index++;
+      }
+
+      if (this.index < this.currentWordLength) {
+        this.currentWord[this.index] = letter;
         this.index++;
       }
     }
@@ -91,11 +91,15 @@ export class FiveWordsComponent implements OnInit {
   }
 
   validateWord(): boolean {
-    for (let i = 0; i < this.currentWord.length; i++) {
-      this.states[i] = 'correct';
-    }
+    if (this.currentWord.indexOf(' ') === -1) {
+      for (let i = 0; i < this.currentWord.length; i++) {
+        this.states[i] = 'correct';
+      }
 
-    this.statesList[this.indexList] = Object.assign([], this.states);
-    return true;
+      this.statesList[this.indexList] = Object.assign([], this.states);
+      return true;
+    } else {
+      return false;
+    }
   }
 }
