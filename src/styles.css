@@ -27,3 +27,7 @@ html {
   background-color: var(--main-bg-color);
   color: var(--main-ft-color);
 }
+
+* {
+  user-select: none;
+}

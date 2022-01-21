@@ -12,6 +12,10 @@ export class WordComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    document.documentElement.style.setProperty(
+      '--word-length',
+      this.wordLength
+    );
     this.letters = new Array(+this.wordLength);
   }
 }
