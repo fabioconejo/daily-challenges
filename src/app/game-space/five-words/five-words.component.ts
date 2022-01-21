@@ -10,7 +10,7 @@ export class FiveWordsComponent implements OnInit {
   wordTemplate: string = '   c ';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
-  lock: any = new Array(this.currentWordLength);
+  states: any = new Array(this.currentWordLength);
   index = 0;
   indexList = 0;
 
@@ -26,7 +26,11 @@ export class FiveWordsComponent implements OnInit {
     this.currentWord = this.wordList[0];
 
     for (let i = 0; i < this.currentWord.length; i++) {
-      this.lock[i] = this.currentWord[i] !== ' ';
+      if (this.currentWord[i] === ' ') {
+        this.states[i] = 'empty';
+      } else {
+        this.states[i] = 'lock';
+      }
     }
   }
 
@@ -50,7 +54,7 @@ export class FiveWordsComponent implements OnInit {
         this.index++;
       }
 
-      while (this.index < this.currentWordLength && this.lock[this.index]) {
+      while (this.index < this.currentWordLength && this.states[this.index]) {
         this.index++;
       }
     }
@@ -58,7 +62,7 @@ export class FiveWordsComponent implements OnInit {
 
   removeLetter() {
     if (this.indexList < this.wordList.length) {
-      while (this.index > 0 && this.lock[this.index - 1]) {
+      while (this.index > 0 && this.states[this.index - 1]) {
         this.index--;
       }
 
