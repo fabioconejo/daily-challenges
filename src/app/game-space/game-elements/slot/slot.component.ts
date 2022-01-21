@@ -8,8 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SlotComponent implements OnInit {
   @Input() lock: boolean;
   @Input() letter: string = '';
+  state = 'empty';
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.lock) {
+      this.state = 'lock';
+    }
+  }
 }

@@ -17,6 +17,7 @@ export class FiveWordsComponent implements OnInit {
     document.documentElement.style.setProperty('--main-bg-color', '#1e1125');
     document.documentElement.style.setProperty('--key-bg', '#180a20');
     document.documentElement.style.setProperty('--slot-brd', '#483a50');
+    document.documentElement.style.setProperty('--slot-lock', '#483a50');
 
     this.currentWord = '  ec '.split('');
   }
