@@ -4,29 +4,33 @@
     <game-word
       wordLength="5"
       [letters]="this.wordList[0]"
-      [states]="this.states"
+      [states]="this.statesList[0]"
     ></game-word>
     <game-word
       wordLength="5"
       [letters]="this.wordList[1]"
-      [states]="this.states"
+      [states]="this.statesList[1]"
     ></game-word>
     <game-word
       wordLength="5"
       [letters]="this.wordList[2]"
-      [states]="this.states"
+      [states]="this.statesList[2]"
     ></game-word>
     <game-word
       wordLength="5"
       [letters]="this.wordList[3]"
-      [states]="this.states"
+      [states]="this.statesList[3]"
     ></game-word>
     <game-word
       wordLength="5"
       [letters]="this.wordList[4]"
-      [states]="this.states"
+      [states]="this.statesList[4]"
     ></game-word>
   </div>
 </div>
 
-<keyboard (letter)="typeLetter($event)" (backspace)="removeLetter()" (enter)="pressEnter()"></keyboard>
+<keyboard
+  (letter)="typeLetter($event)"
+  (backspace)="removeLetter()"
+  (enter)="pressEnter()"
+></keyboard>

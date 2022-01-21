@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
+  statesList: any = new Array(5);
   wordTemplate: string = '   c ';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
@@ -32,6 +33,12 @@ export class FiveWordsComponent implements OnInit {
         this.states[i] = 'lock';
       }
     }
+
+    this.statesList[0] = Object.assign([], this.states);
+    this.statesList[1] = Object.assign([], this.states);
+    this.statesList[2] = Object.assign([], this.states);
+    this.statesList[3] = Object.assign([], this.states);
+    this.statesList[4] = Object.assign([], this.states);
   }
 
   changeColors() {
@@ -41,12 +48,6 @@ export class FiveWordsComponent implements OnInit {
     document.documentElement.style.setProperty('--slot-lock', '#483a50');
   }
 
-  goToNextWord() {
-    this.index = 0;
-    this.indexList++;
-    this.currentWord = this.wordList[this.indexList];
-  }
-
   typeLetter(letter: any) {
     if (this.indexList < this.wordList.length) {
       if (this.index < this.currentWordLength) {
@@ -54,7 +55,10 @@ export class FiveWordsComponent implements OnInit {
         this.index++;
       }
 
-      while (this.index < this.currentWordLength && this.states[this.index]) {
+      while (
+        this.index < this.currentWordLength &&
+        this.states[this.index] === 'lock'
+      ) {
         this.index++;
       }
     }
@@ -62,7 +66,7 @@ export class FiveWordsComponent implements OnInit {
 
   removeLetter() {
     if (this.indexList < this.wordList.length) {
-      while (this.index > 0 && this.states[this.index - 1]) {
+      while (this.index > 0 && this.states[this.index - 1] === 'lock') {
         this.index--;
       }
 
@@ -74,6 +78,24 @@ export class FiveWordsComponent implements OnInit {
   }
 
   pressEnter() {
-    this.goToNextWord();
+    if (this.validateWord()) {
+      this.goToNextWord();
+    }
+  }
+
+  goToNextWord() {
+    this.index = 0;
+    this.indexList++;
+    this.currentWord = this.wordList[this.indexList];
+    this.states = this.statesList[this.indexList];
+  }
+
+  validateWord(): boolean {
+    for (let i = 0; i < this.currentWord.length; i++) {
+      this.states[i] = 'correct';
+    }
+
+    this.statesList[this.indexList] = Object.assign([], this.states);
+    return true;
   }
 }
