@@ -5,11 +5,7 @@
   animation-name: Shake;
   animation-duration: 600ms;
 }
-.row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 5px;
-}
+
 .win {
   animation-name: Bounce;
   animation-duration: 1000ms;
