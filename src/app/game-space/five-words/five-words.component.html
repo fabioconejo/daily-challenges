@@ -1,7 +1,7 @@
 <game-header gameName="5 WORDS"></game-header>
 <div id="board-container">
   <div id="board" style="width: 350px; height: 420px;">
-    <game-word wordLength="5" letters="{{ this.currentWord }}"></game-word>
+    <game-word wordLength="5" [letters]="this.currentWord"></game-word>
     <game-word wordLength="5"></game-word>
     <game-word wordLength="5"></game-word>
     <game-word wordLength="5"></game-word>
