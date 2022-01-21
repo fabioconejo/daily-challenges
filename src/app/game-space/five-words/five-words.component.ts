@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FiveWordsComponent implements OnInit {
   currentWordLength: number = 5;
   currentWord: any = new Array(this.currentWordLength);
-  lock: any = [0, 0, 1, 1, 0];
+  lock: any = [0, 0, 0, 0, 0];
   index = 0;
 
   constructor() {}
@@ -20,6 +20,10 @@ export class FiveWordsComponent implements OnInit {
     document.documentElement.style.setProperty('--slot-lock', '#483a50');
 
     this.currentWord = '  ec '.split('');
+
+    for (let i = 0; i < this.currentWord.length; i++) {
+      this.lock[i] = this.currentWord[i] !== ' ';
+    }
   }
 
   typeLetter(letter: any) {
