@@ -38,32 +38,38 @@ export class FiveWordsComponent implements OnInit {
   }
 
   goToNextWord() {
+    this.index = 0;
     this.indexList++;
+    this.currentWord = this.wordList[this.indexList];
   }
 
   typeLetter(letter: any) {
-    if (this.index < this.currentWordLength) {
-      this.currentWord[this.index] = letter;
-      this.index++;
-    }
+    if (this.indexList < this.wordList.length) {
+      if (this.index < this.currentWordLength) {
+        this.currentWord[this.index] = letter;
+        this.index++;
+      }
 
-    while (this.index < this.currentWordLength && this.lock[this.index]) {
-      this.index++;
+      while (this.index < this.currentWordLength && this.lock[this.index]) {
+        this.index++;
+      }
     }
   }
 
   removeLetter() {
-    while (this.index > 0 && this.lock[this.index - 1]) {
-      this.index--;
-    }
+    if (this.indexList < this.wordList.length) {
+      while (this.index > 0 && this.lock[this.index - 1]) {
+        this.index--;
+      }
 
-    if (this.index > 0) {
-      this.index--;
-      this.currentWord[this.index] = ' ';
+      if (this.index > 0) {
+        this.index--;
+        this.currentWord[this.index] = ' ';
+      }
     }
   }
 
   pressEnter() {
-    
+    this.goToNextWord();
   }
 }

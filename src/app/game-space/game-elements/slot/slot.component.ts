@@ -13,7 +13,6 @@ export class SlotComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.lock);
     if (this.lock) {
       this.state = 'lock';
     }
