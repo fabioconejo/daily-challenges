@@ -6,13 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./slot.component.css'],
 })
 export class SlotComponent implements OnInit {
-  @Input() lock: boolean;
+  @Input() lock: any;
   @Input() letter: string = '';
   state = 'empty';
 
   constructor() {}
 
   ngOnInit() {
+    console.log(this.lock);
     if (this.lock) {
       this.state = 'lock';
     }
