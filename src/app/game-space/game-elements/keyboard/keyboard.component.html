@@ -33,7 +33,7 @@
     <button data-key="b" (click)="this.letter.emit('b')">b</button>
     <button data-key="n" (click)="this.letter.emit('n')">n</button>
     <button data-key="m" (click)="this.letter.emit('m')">m</button>
-    <button data-key="←" class="one-and-a-half">
+    <button data-key="←" (click)="this.backspace.emit()" class="one-and-a-half">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24"
