@@ -1,28 +1,39 @@
 <div id="keyboard">
   <div class="row">
-    <button data-key="q" (click)="this.letter.emit('q')">q</button
-    ><button data-key="w">w</button><button data-key="e">e</button
-    ><button data-key="r">r</button><button data-key="t">t</button
-    ><button data-key="y">y</button><button data-key="u">u</button
-    ><button data-key="i">i</button><button data-key="o">o</button
-    ><button data-key="p">p</button>
+    <button data-key="q" (click)="this.letter.emit('q')">q</button>
+    <button data-key="w" (click)="this.letter.emit('w')">w</button>
+    <button data-key="e" (click)="this.letter.emit('e')">e</button>
+    <button data-key="r" (click)="this.letter.emit('r')">r</button>
+    <button data-key="t" (click)="this.letter.emit('t')">t</button>
+    <button data-key="y" (click)="this.letter.emit('y')">y</button>
+    <button data-key="u" (click)="this.letter.emit('u')">u</button>
+    <button data-key="i" (click)="this.letter.emit('i')">i</button>
+    <button data-key="o" (click)="this.letter.emit('o')">o</button>
+    <button data-key="p" (click)="this.letter.emit('p')">p</button>
   </div>
   <div class="row">
     <div class="spacer half"></div>
-    <button data-key="a">a</button><button data-key="s">s</button
-    ><button data-key="d">d</button><button data-key="f">f</button
-    ><button data-key="g">g</button><button data-key="h">h</button
-    ><button data-key="j">j</button><button data-key="k">k</button
-    ><button data-key="l">l</button>
+    <button data-key="a" (click)="this.letter.emit('a')">a</button>
+    <button data-key="s" (click)="this.letter.emit('s')">s</button>
+    <button data-key="d" (click)="this.letter.emit('d')">d</button>
+    <button data-key="f" (click)="this.letter.emit('f')">f</button>
+    <button data-key="g" (click)="this.letter.emit('g')">g</button>
+    <button data-key="h" (click)="this.letter.emit('h')">h</button>
+    <button data-key="j" (click)="this.letter.emit('j')">j</button>
+    <button data-key="k" (click)="this.letter.emit('k')">k</button>
+    <button data-key="l" (click)="this.letter.emit('l')">l</button>
     <div class="spacer half"></div>
   </div>
   <div class="row">
-    <button data-key="↵" class="one-and-a-half">enter</button
-    ><button data-key="z">z</button><button data-key="x">x</button
-    ><button data-key="c">c</button><button data-key="v">v</button
-    ><button data-key="b">b</button><button data-key="n">n</button
-    ><button data-key="m">m</button
-    ><button data-key="←" class="one-and-a-half">
+    <button data-key="↵" class="one-and-a-half">enter</button>
+    <button data-key="z" (click)="this.letter.emit('z')">z</button>
+    <button data-key="x" (click)="this.letter.emit('x')">x</button>
+    <button data-key="c" (click)="this.letter.emit('c')">c</button>
+    <button data-key="v" (click)="this.letter.emit('v')">v</button>
+    <button data-key="b" (click)="this.letter.emit('b')">b</button>
+    <button data-key="n" (click)="this.letter.emit('n')">n</button>
+    <button data-key="m" (click)="this.letter.emit('m')">m</button>
+    <button data-key="←" class="one-and-a-half">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24"
