@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./word.component.css'],
 })
 export class WordComponent implements OnInit {
+  @Input() word: string;
   @Input() wordLength: string;
   letters: any;
 
@@ -17,6 +18,10 @@ export class WordComponent implements OnInit {
       this.wordLength
     );
     this.letters = new Array(+this.wordLength);
+  }
+
+  ngOnChanges() {
+    console.log(this.word);
   }
 
   public getStyles() {
