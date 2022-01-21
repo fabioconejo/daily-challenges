@@ -13,4 +13,8 @@ export class FiveWordsComponent implements OnInit {
     document.documentElement.style.setProperty('--key-bg', '#180a20');
     document.documentElement.style.setProperty('--slot-brd', '#483a50');
   }
+
+  typeLetter(letter: any) {
+    console.log(letter);
+  }
 }
