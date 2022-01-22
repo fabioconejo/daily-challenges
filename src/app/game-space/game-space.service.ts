@@ -7,7 +7,6 @@ export class GameSpaceService {
   constructor() {}
 
   isAWord(word: string): boolean {
-    console.log(word);
     return true;
   }
 }
