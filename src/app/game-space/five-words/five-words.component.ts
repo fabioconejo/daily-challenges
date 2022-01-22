@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GameSpaceService } from '../game-space.service';
+
 @Component({
   selector: 'five-words',
   templateUrl: './five-words.component.html',
@@ -8,14 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
   statesList: any = new Array(5);
-  wordTemplate: string = '  a a';
+  wordTemplate: string = ' a a ';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   states: any = new Array(this.currentWordLength);
   index = 0;
   indexList = 0;
 
-  constructor() {}
+  constructor(private gss: GameSpaceService) {}
 
   ngOnInit() {
     this.changeColors();
@@ -91,7 +93,10 @@ export class FiveWordsComponent implements OnInit {
   }
 
   validateWord(): boolean {
-    if (this.currentWord.indexOf(' ') === -1) {
+    if (
+      this.currentWord.indexOf(' ') === -1 &&
+      this.gss.isAWord(this.currentWord.join(''))
+    ) {
       for (let i = 0; i < this.currentWord.length; i++) {
         this.states[i] = 'correct';
       }

@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class GameSpaceService {
+  constructor() {}
 
-  constructor() { }
-
+  isAWord(word: string): boolean {
+    console.log(word);
+    return true;
+  }
 }
