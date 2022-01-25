@@ -11,4 +11,8 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  loadOverlay() {
+    document.getElementById('overlay').style.display = 'block';
+  }
 }
