@@ -50,6 +50,10 @@ export class FiveWordsComponent implements OnInit {
     document.documentElement.style.setProperty('--slot-lock', '#483a50');
   }
 
+  loadOverlay() {
+    document.getElementById('overlay').style.display = 'block';
+  }
+
   typeLetter(letter: any) {
     if (this.indexList < this.wordList.length) {
       while (

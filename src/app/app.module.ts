@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GameSpaceComponent } from './game-space/game-space.component';
 import { FiveWordsComponent } from './game-space/five-words/five-words.component';
 import { HeaderComponent } from './game-space/game-elements/header/header.component';
+import { TutorialComponent } from './game-space/game-elements/tutorial/tutorial.component';
 import { KeyboardComponent } from './game-space/game-elements/keyboard/keyboard.component';
 import { SlotComponent } from './game-space/game-elements/slot/slot.component';
 import { WordComponent } from './game-space/game-elements/word/word.component';
@@ -20,6 +21,7 @@ import { WordComponent } from './game-space/game-elements/word/word.component';
     KeyboardComponent,
     SlotComponent,
     WordComponent,
+    TutorialComponent
   ],
   bootstrap: [AppComponent],
 })

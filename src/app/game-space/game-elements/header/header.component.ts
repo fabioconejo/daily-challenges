@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'game-header',
@@ -7,12 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() gameName: string;
+  @Output() tutorial = new EventEmitter();
 
   constructor() {}
 
   ngOnInit() {}
 
-  loadOverlay() {
-    document.getElementById('overlay').style.display = 'block';
-  }
+  
 }
