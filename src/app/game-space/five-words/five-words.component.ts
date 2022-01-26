@@ -45,13 +45,17 @@ export class FiveWordsComponent implements OnInit {
 
   changeColors() {
     document.documentElement.style.setProperty('--main-bg-color', '#1e1125');
+    document.documentElement.style.setProperty(
+      '--overlay-bg-color',
+      'rgba(30, 17, 37, 0.8)'
+    );
     document.documentElement.style.setProperty('--key-bg', '#180a20');
     document.documentElement.style.setProperty('--slot-brd', '#483a50');
     document.documentElement.style.setProperty('--slot-lock', '#483a50');
   }
 
   loadOverlay() {
-    document.getElementById('overlay').style.display = 'block';
+    document.getElementsByTagName('tutorial')[0].setAttribute('open', '');
   }
 
   typeLetter(letter: any) {
