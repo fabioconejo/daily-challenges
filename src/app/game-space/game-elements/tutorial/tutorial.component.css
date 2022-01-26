@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   justify-content: center;
-  background-color: var(--color-background);
+  background-color: var(--main-bg-color);
   animation: SlideIn 100ms linear;
   z-index: 2000;
 }
@@ -17,7 +17,7 @@
 
 .content {
   position: relative;
-  color: var(--color-tone-1);
+  color: var(--main-ft-color);
   padding: 0 32px;
   max-width: var(--game-max-width);
   width: 100%;
@@ -92,15 +92,14 @@ game-icon {
   }
 }
 
-
 .instructions {
   font-size: 14px;
-  color: var(--color-tone-1)
+  color: var(--main-ft-color);
 }
 
 .examples {
-  border-bottom: 1px solid var(--color-tone-4);
-  border-top: 1px solid var(--color-tone-4);
+  border-bottom: 1px solid var(--main-bg-color);
+  border-top: 1px solid var(--main-bg-color);
 }
 
 .example {
@@ -108,13 +107,7 @@ game-icon {
   margin-bottom: 24px;
 }
 
-game-tile {
-  width: 40px;
-  height: 40px;
-}
-
 :host([page]) section {
   padding: 16px;
   padding-top: 0px;
 }
-

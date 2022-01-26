@@ -1,5 +1,10 @@
 <div class="menu">
-  <button id="help-button" class="icon" aria-label="help">
+  <button
+    id="help-button"
+    class="icon"
+    aria-label="help"
+    (click)="this.tutorial.emit()"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="24"
