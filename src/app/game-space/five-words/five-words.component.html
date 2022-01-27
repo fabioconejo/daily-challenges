@@ -1,5 +1,5 @@
 <game-header gameName="5 WORDS" (tutorial)="loadOverlay()"></game-header>
-<tutorial></tutorial>
+
 <div id="board-container">
   <div id="board" style="width: 350px; height: 420px;">
     <game-word
@@ -35,3 +35,48 @@
   (backspace)="removeLetter()"
   (enter)="pressEnter()"
 ></keyboard>
+
+<tutorial [template]="fivewords"></tutorial>
+
+<ng-template #fivewords>
+  <section>
+    <div class="instructions">
+      <p>Guess the <strong>WORDLE</strong> in 6 tries.</p>
+      <p>
+        Each guess must be a valid 5 letter word. Hit the enter button to
+        submit.
+      </p>
+      <p>
+        After each guess, the color of the tiles will change to show how close
+        your guess was to the word.
+      </p>
+      <div class="examples">
+        <p><strong>Examples</strong></p>
+        <div class="example">
+          <div class="row"></div>
+          <p>
+            The letter <strong>W</strong> is in the word and in the correct
+            spot.
+          </p>
+        </div>
+        <div class="example">
+          <div class="row"></div>
+          <p>
+            The letter <strong>I</strong> is in the word but in the wrong spot.
+          </p>
+        </div>
+        <div class="example">
+          <div class="row"></div>
+          <p>The letter <strong>U</strong> is not in the word in any spot.</p>
+        </div>
+      </div>
+      <p>
+        <strong
+          >A new WORDLE will be available each day!<strong></strong
+        ></strong>
+      </p>
+      <strong><strong> </strong></strong>
+    </div>
+    <strong><strong> </strong></strong>
+  </section>
+</ng-template>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'tutorial',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tutorial.component.css'],
 })
 export class TutorialComponent implements OnInit {
+  @Input() template: TemplateRef<any>;
+
   constructor() {}
 
   ngOnInit() {}
