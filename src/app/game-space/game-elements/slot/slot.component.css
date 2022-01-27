@@ -66,16 +66,27 @@
     opacity: 1;
   }
 }
-.tile[data-animation='flip'] {
-  animation-name: Flip;
-  animation-duration: 500ms;
+.tile[data-animation='flip-in'] {
+  animation-name: FlipIn;
+  animation-duration: 250ms;
   animation-timing-function: ease-in;
 }
-@keyframes Flip {
+
+@keyframes FlipIn {
   0% {
     transform: rotateX(0);
   }
-  50% {
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+.tile[data-animation='flip-out'] {
+  animation-name: FlipOut;
+  animation-duration: 250ms;
+  animation-timing-function: ease-in;
+}
+@keyframes FlipOut {
+  0% {
     transform: rotateX(-90deg);
   }
   100% {
