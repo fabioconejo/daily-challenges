@@ -8,15 +8,17 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 export class SlotComponent implements OnInit, OnChanges {
   @Input() letter: string = '';
   @Input() state: string;
+  @Input() position: number;
   animation: string = 'idle';
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   ngOnChanges() {
     if (this.state === 'correct') {
-      
       this.animation = 'flip';
     }
   }
