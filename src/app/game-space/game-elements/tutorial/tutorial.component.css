@@ -51,7 +51,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-game-icon {
+.close {
   position: absolute;
   right: 0;
   user-select: none;
