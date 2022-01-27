@@ -47,7 +47,7 @@ export class FiveWordsComponent implements OnInit {
     document.documentElement.style.setProperty('--main-bg-color', '#1e1125');
     document.documentElement.style.setProperty(
       '--overlay-bg-color',
-      'rgba(30, 17, 37, 0.8)'
+      'rgba(30, 17, 37, 0.85)'
     );
     document.documentElement.style.setProperty('--key-bg', '#180a20');
     document.documentElement.style.setProperty('--slot-brd', '#483a50');
