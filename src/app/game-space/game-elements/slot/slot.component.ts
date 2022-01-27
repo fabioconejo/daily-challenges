@@ -5,7 +5,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
   templateUrl: './slot.component.html',
   styleUrls: ['./slot.component.css'],
 })
-export class SlotComponent implements OnInit, OnChanges {
+export class SlotComponent implements OnInit {
   @Input() letter: string = '';
   @Input() state: string;
   @Input() position: number;
@@ -15,20 +15,23 @@ export class SlotComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    this.localState = this.state;
+    this.localState = 'empty';
+    if (this.state === 'correct') {
+      this.showResult();
+    } else {
+      this.localState = this.state;
+    }
   }
 
-  ngOnChanges() {
-    if (this.state === 'correct') {
-      setTimeout(() => {
-        this.animation = 'flip-in';
-        this.localState = 'idle';
-      }, 250 * (this.position + 1));
+  showResult() {
+    setTimeout(() => {
+      this.localState = 'empty';
+      this.animation = 'flip-in';
+    }, 250 * this.position);
 
-      setTimeout(() => {
-        this.localState = this.state;
-        this.animation = 'flip-out';
-      }, (250 * (this.position + 1)) + 250);
-    }
+    setTimeout(() => {
+      this.localState = 'correct';
+      this.animation = 'flip-out';
+    }, 250 * this.position + 250);
   }
 }

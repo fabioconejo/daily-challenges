@@ -10,7 +10,7 @@ import { GameSpaceService } from '../game-space.service';
 export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
   statesList: any = new Array(5);
-  wordTemplate: string = ' a a ';
+  wordTemplate: string = '   ck';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   states: any = new Array(this.currentWordLength);
