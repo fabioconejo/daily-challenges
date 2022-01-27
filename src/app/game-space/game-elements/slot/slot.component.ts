@@ -15,13 +15,9 @@ export class SlotComponent implements OnInit, OnChanges {
   ngOnInit() {}
 
   ngOnChanges() {
-    if (this.state !== 'empty') {
+    if (this.state === 'correct') {
       
-      this.animation = 'flip-in';
-      
-      setTimeout(function () {
-        this.animation = 'flip-out';  
-      }, 250);
+      this.animation = 'flip';
     }
   }
 }
