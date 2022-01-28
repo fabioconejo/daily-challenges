@@ -16,7 +16,7 @@ export class SlotComponent implements OnInit {
 
   ngOnInit() {
     this.localState = 'empty';
-    if (this.state === 'correct') {
+    if (this.state !== 'empty' && this.state !== 'lock') {
       this.showResult();
     } else {
       this.localState = this.state;
