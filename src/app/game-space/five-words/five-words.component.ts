@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToasterComponent } from '../game-elements/toaster/toaster.component';
 
 import { GameSpaceService } from '../game-space.service';
 
@@ -8,6 +9,7 @@ import { GameSpaceService } from '../game-space.service';
   styleUrls: ['./five-words.component.css'],
 })
 export class FiveWordsComponent implements OnInit {
+  
   wordList: any = new Array(5);
   statesList: any = new Array(5);
   wordTemplate: string = '   ck';
@@ -92,8 +94,10 @@ export class FiveWordsComponent implements OnInit {
     if (this.validateWord()) {
       this.goToNextWord();
     } else {
-      this.toasterText = '';
-      this.toasterText = 'Not enough letters';
+      this.toasterText = "bla bla";
+      setTimeout(() => {
+        this.toasterText = "";
+      }, 3000);
     }
   }
 
