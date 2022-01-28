@@ -30,7 +30,7 @@ export class SlotComponent implements OnInit {
     }, 250 * this.position);
 
     setTimeout(() => {
-      this.localState = 'correct';
+      this.localState = this.state;
       this.animation = 'flip-out';
     }, 250 * this.position + 250);
   }
