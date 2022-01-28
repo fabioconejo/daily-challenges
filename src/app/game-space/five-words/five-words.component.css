@@ -11,6 +11,19 @@
   animation-duration: 600ms;
 }
 
+.toaster {
+  position: absolute;
+  top: 7.5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  width: fit-content;
+}
+
+#game-toaster {
+  z-index: 1000;
+}
+
 .win {
   animation-name: Bounce;
   animation-duration: 1000ms;
