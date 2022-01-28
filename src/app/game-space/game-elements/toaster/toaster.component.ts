@@ -7,12 +7,14 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 })
 export class ToasterComponent implements OnInit, OnChanges {
   @Input() text: string;
-  @Output() textEmitter = new EventEmitter<string>();
+  @Output() textEmitter: EventEmitter<string> = new EventEmitter<string>();
   className: string = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.textEmitter.emit(this.text);
+  }
 
   ngOnChanges() {
     if (this.text !== '') {

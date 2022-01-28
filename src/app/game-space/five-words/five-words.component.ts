@@ -92,6 +92,7 @@ export class FiveWordsComponent implements OnInit {
     if (this.validateWord()) {
       this.goToNextWord();
     } else {
+      this.toasterText = '';
       this.toasterText = 'Not enough letters';
     }
   }
