@@ -1,21 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'toaster',
   templateUrl: './toaster.component.html',
-  styleUrls: ['./toaster.component.css']
+  styleUrls: ['./toaster.component.css'],
 })
-export class ToasterComponent implements OnInit {
+export class ToasterComponent implements OnInit, OnChanges {
+  @Input() text: string;
+  className: string = '';
 
-  @Input() text:string
-  className:string = "show"
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.className = "";
-    }, 2900);
+  ngOnChanges() {
+    if (this.text !== '') {
+      this.className = 'show';
+      setTimeout(() => {
+        this.className = '';
+        this.text = '';
+      }, 2900);
+    }
   }
-
 }

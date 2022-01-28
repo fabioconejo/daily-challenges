@@ -14,8 +14,9 @@ export class FiveWordsComponent implements OnInit {
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   states: any = new Array(this.currentWordLength);
-  index = 0;
-  indexList = 0;
+  index: number = 0;
+  indexList: number = 0;
+  toasterText: string = '';
 
   constructor(private gss: GameSpaceService) {}
 
@@ -90,6 +91,8 @@ export class FiveWordsComponent implements OnInit {
   pressEnter() {
     if (this.validateWord()) {
       this.goToNextWord();
+    } else {
+      this.toasterText = 'Not enough letters';
     }
   }
 
