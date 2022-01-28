@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'toaster',
@@ -7,6 +7,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 })
 export class ToasterComponent implements OnInit, OnChanges {
   @Input() text: string;
+  @Output() textEmitter = new EventEmitter();
   className: string = '';
 
   constructor() {}
@@ -19,6 +20,7 @@ export class ToasterComponent implements OnInit, OnChanges {
       setTimeout(() => {
         this.className = '';
         this.text = '';
+        this.textEmitter.emit(this.text);
       }, 2900);
     }
   }
