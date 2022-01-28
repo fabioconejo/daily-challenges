@@ -15,7 +15,6 @@ export class SlotComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.localState = 'empty';
     if (this.state !== 'empty' && this.state !== 'lock') {
       this.showResult();
     } else {
@@ -24,8 +23,8 @@ export class SlotComponent implements OnInit {
   }
 
   showResult() {
+    this.localState = 'empty';
     setTimeout(() => {
-      this.localState = 'empty';
       this.animation = 'flip-in';
     }, 250 * this.position);
 
