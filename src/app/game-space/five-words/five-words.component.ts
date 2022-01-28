@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ToasterComponent } from '../game-elements/toaster/toaster.component';
+import { Component, OnInit } from '@angular/core';
 
 import { GameSpaceService } from '../game-space.service';
 
@@ -9,7 +8,6 @@ import { GameSpaceService } from '../game-space.service';
   styleUrls: ['./five-words.component.css'],
 })
 export class FiveWordsComponent implements OnInit {
-  
   wordList: any = new Array(5);
   statesList: any = new Array(5);
   wordTemplate: string = '   ck';
@@ -93,11 +91,6 @@ export class FiveWordsComponent implements OnInit {
   pressEnter() {
     if (this.validateWord()) {
       this.goToNextWord();
-    } else {
-      this.toasterText = "bla bla";
-      setTimeout(() => {
-        this.toasterText = "";
-      }, 3000);
     }
   }
 
@@ -109,18 +102,21 @@ export class FiveWordsComponent implements OnInit {
   }
 
   validateWord(): boolean {
-    if (
-      this.currentWord.indexOf(' ') === -1 &&
-      this.gss.isAWord(this.currentWord.join(''))
-    ) {
-      for (let i = 0; i < this.currentWord.length; i++) {
-        this.states[i] = 'correct';
-      }
-
-      this.statesList[this.indexList] = Object.assign([], this.states);
-      return true;
-    } else {
+    if (this.currentWord.indexOf(' ') !== -1) {
+      this.toasterText = 'Not enough letters';
       return false;
     }
+
+    if (!this.gss.isAWord(this.currentWord.join(''))) {
+      this.toasterText = 'Not in word list';
+      return false;
+    }
+
+    for (let i = 0; i < this.currentWord.length; i++) {
+      this.states[i] = 'correct';
+    }
+
+    this.statesList[this.indexList] = Object.assign([], this.states);
+    return true;
   }
 }
