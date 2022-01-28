@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 })
 export class ToasterComponent implements OnInit, OnChanges {
   @Input() text: string;
-  @Output() textEmitter = new EventEmitter();
+  @Output() textEmitter = new EventEmitter<string>();
   className: string = '';
 
   constructor() {}
