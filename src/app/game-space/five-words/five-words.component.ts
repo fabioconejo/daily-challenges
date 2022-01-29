@@ -107,6 +107,12 @@ export class FiveWordsComponent implements OnInit {
       return false;
     }
 
+    for(let word of this.wordList) {
+      if(word.join('') === this.currentWord.join('')) {
+        
+      }
+    }
+
     if (!this.gss.isAWord(this.currentWord.join(''))) {
       this.toasterText = 'Not in word list';
       return false;
