@@ -13,7 +13,6 @@ const firebaseConfig = {
   measurementId: "G-YY5KE527FD"
 };
 
-initializeApp(firebaseConfig);
 
 @Injectable({
   providedIn: 'root',
