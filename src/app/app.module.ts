@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
 import { GameSpaceComponent } from './game-space/game-space.component';
 import { FiveWordsComponent } from './game-space/five-words/five-words.component';
@@ -18,9 +16,7 @@ import { WordComponent } from './game-space/game-elements/word/word.component';
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -34,5 +30,6 @@ import { WordComponent } from './game-space/game-elements/word/word.component';
     ToasterComponent,
   ],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}
