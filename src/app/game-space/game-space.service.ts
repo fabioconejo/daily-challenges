@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { initializeApp } from 'firebase/app';
-
 const firebaseConfig = {
   apiKey: "AIzaSyD_mT-svtH83QG1luIE1lszWqMNRMljqf0",
   authDomain: "daily-challenges-90763.firebaseapp.com",
