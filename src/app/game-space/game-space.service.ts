@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 
-import { FirebaseApp, getApp } from '@angular/fire/app';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-
+import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root',
 })
 export class GameSpaceService {
-  constructor() {
+  constructor(firestore: Firestore) {
     //const app = getApp();
   }
   
