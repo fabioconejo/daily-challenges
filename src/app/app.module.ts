@@ -22,7 +22,7 @@ import {
   imports: [
     BrowserModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    //provideFirebaseApp(() => initializeApp(environment.firebase)),
     //provideFirestore(() => {
     //  getFirestore();
     //}),
