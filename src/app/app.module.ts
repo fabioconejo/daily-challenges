@@ -12,7 +12,7 @@ import { KeyboardComponent } from './game-space/game-elements/keyboard/keyboard.
 import { SlotComponent } from './game-space/game-elements/slot/slot.component';
 import { WordComponent } from './game-space/game-elements/word/word.component';
 import { environment } from '../environments/environment';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, getApp, initializeApp, getApps } from '@angular/fire/app';
 import {
   getFirestore,
   provideFirestore
@@ -22,10 +22,10 @@ import {
   imports: [
     BrowserModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => {
-      getFirestore();
-    }),
+    //provideFirebaseApp(() => {getApps().isEmpty() ? initializeApp(environment.firebase) : getApp()}),
+    //provideFirestore(() => {
+    //  getFirestore();
+    //}),
   ],
   declarations: [
     AppComponent,
