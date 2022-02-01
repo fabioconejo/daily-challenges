@@ -5,7 +5,7 @@ import { Firestore, collectionData, collection } from '@angular/fire/firestore/l
   providedIn: 'root',
 })
 export class GameSpaceService {
-  constructor() {
+  constructor(firestore: Firestore) {
     //const app = getApp();
   }
   

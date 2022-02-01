@@ -12,11 +12,8 @@ import { KeyboardComponent } from './game-space/game-elements/keyboard/keyboard.
 import { SlotComponent } from './game-space/game-elements/slot/slot.component';
 import { WordComponent } from './game-space/game-elements/word/word.component';
 import { environment } from '../environments/environment';
-import { provideFirebaseApp, getApp, initializeApp, getApps } from '@angular/fire/app';
-import {
-  getFirestore,
-  provideFirestore
-} from '@angular/fire/firestore/lite';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore/lite';
 
 @NgModule({
   imports: [
