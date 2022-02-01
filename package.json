@@ -14,7 +14,7 @@
     "@angular/router": "12.2.16",
     "@firebase/app": "^0.7.15",
     "angularfire2": "^5.4.2",
-    "core-js": "2.6.11",
+    "core-js": "^3.20.3",
     "firebase": "^9.6.5",
     "firebase-tools": "9.16.0",
     "null": "2.0.0",
