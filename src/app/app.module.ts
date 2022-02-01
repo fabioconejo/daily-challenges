@@ -11,6 +11,7 @@ import { TutorialComponent } from './game-space/game-elements/tutorial/tutorial.
 import { KeyboardComponent } from './game-space/game-elements/keyboard/keyboard.component';
 import { SlotComponent } from './game-space/game-elements/slot/slot.component';
 import { WordComponent } from './game-space/game-elements/word/word.component';
+import { GameSpaceService } from './game-space/game-space.service';
 import { environment } from '../environments/environment';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore/lite';
@@ -35,6 +36,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore/lite';
     TutorialComponent,
     ToasterComponent,
   ],
+  providers:[GameSpaceService],
   bootstrap: [AppComponent],
   exports: [],
 })
