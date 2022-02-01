@@ -19,7 +19,7 @@
  */
 
 /** IE9, IE10 and IE11 requires all of the following polyfills. **/
-import 'core-js/es/symbol';
+// import 'core-js/es/symbol';
 // import 'core-js/es6/object';
 // import 'core-js/es6/function';
 // import 'core-js/es6/parse-int';
@@ -42,7 +42,7 @@ import 'core-js/es/symbol';
 
 /** Evergreen browsers require these. **/
 // import 'core-js/es6/reflect';
-// import 'core-js/es7/reflect';
+import 'core-js/es/reflect';
 
 
 /**

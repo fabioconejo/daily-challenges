@@ -13,17 +13,15 @@ import { SlotComponent } from './game-space/game-elements/slot/slot.component';
 import { WordComponent } from './game-space/game-elements/word/word.component';
 import { GameSpaceService } from './game-space/game-space.service';
 import { environment } from '../environments/environment';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore/lite';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => {
-      getFirestore();
-    }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   declarations: [
     AppComponent,
@@ -36,7 +34,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore/lite';
     TutorialComponent,
     ToasterComponent,
   ],
-  providers:[GameSpaceService],
+  providers: [GameSpaceService],
   bootstrap: [AppComponent],
   exports: [],
 })
