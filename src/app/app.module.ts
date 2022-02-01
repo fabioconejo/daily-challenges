@@ -13,7 +13,10 @@ import { SlotComponent } from './game-space/game-elements/slot/slot.component';
 import { WordComponent } from './game-space/game-elements/word/word.component';
 import { environment } from '../environments/environment';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import {
+  getFirestore,
+  provideFirestore
+} from '@angular/fire/firestore/lite';
 
 @NgModule({
   imports: [
