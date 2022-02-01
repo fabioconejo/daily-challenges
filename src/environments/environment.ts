@@ -11,7 +11,7 @@ export const environment = {
     measurementId: 'G-YY5KE527FD',
   },
   supabase: {
-    url:'',
-    key:''
+    url:'https://uxnphpvwjixdblbdoscd.supabase.co',
+    key:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0Mzc0ODIyNSwiZXhwIjoxOTU5MzI0MjI1fQ.obm4Ho7Iptn6diOeTE3v6h000MWpSxFVeDE5LQDEgkA'
   }
 };
