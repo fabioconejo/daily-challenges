@@ -88,8 +88,8 @@ export class FiveWordsComponent implements OnInit {
     }
   }
 
-  pressEnter() {
-    if (this.validateWord()) {
+  async pressEnter() {
+    if (await this.validateWord()) {
       this.goToNextWord();
     }
   }
@@ -101,7 +101,7 @@ export class FiveWordsComponent implements OnInit {
     this.states = this.statesList[this.indexList];
   }
 
-  validateWord(): boolean {
+  async validateWord(): Promise<boolean> {
     if (this.currentWord.indexOf(' ') !== -1) {
       this.toasterText = 'Not enough letters';
       return false;
@@ -113,7 +113,7 @@ export class FiveWordsComponent implements OnInit {
       }
     }
 
-    if (!this.gss.isAWord(this.currentWord.join(''))) {
+    if (! await this.gss.isAWord(this.currentWord.join(''))) {
       this.toasterText = 'Not in word list';
       return false;
     }
