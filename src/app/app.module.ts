@@ -23,9 +23,9 @@ import {
     BrowserModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    //provideFirestore(() => {
-    //  getFirestore();
-    //}),
+    provideFirestore(() => {
+      getFirestore();
+    }),
   ],
   declarations: [
     AppComponent,
