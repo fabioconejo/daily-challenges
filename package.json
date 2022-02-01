@@ -13,6 +13,7 @@
     "@angular/platform-browser-dynamic": "^13.2.0",
     "@angular/router": "^13.2.0",
     "@firebase/app": "^0.7.15",
+    "@supabase/supabase-js": "^1.29.4",
     "angularfire2": "^5.4.2",
     "core-js": "^3.20.3",
     "firebase": "^9.6.5",

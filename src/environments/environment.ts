@@ -10,4 +10,8 @@ export const environment = {
     appId: '1:436027376085:web:0ac1bac91d69943590bd5c',
     measurementId: 'G-YY5KE527FD',
   },
+  supabase: {
+    url:'',
+    key:''
+  }
 };
