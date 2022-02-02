@@ -14,6 +14,7 @@ import {
 export class WordComponent implements OnInit, OnChanges {
   @Input() wordLength: string;
   @Input() letters: any;
+  @Input() points: any = [];
   @Input() states: any;
 
   constructor() {}
@@ -23,8 +24,6 @@ export class WordComponent implements OnInit, OnChanges {
       '--word-length',
       this.wordLength
     );
-
-    
   }
 
   ngOnChanges(changes: SimpleChanges) {}

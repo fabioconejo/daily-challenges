@@ -10,10 +10,14 @@ import { GameSpaceService } from '../game-space.service';
 export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
   statesList: any = new Array(5);
+  pointsList: any = new Array(5);
   wordTemplate: string = '   ck';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   states: any = new Array(this.currentWordLength);
+  points: any = new Array(this.currentWordLength);
+  frequency: any = new Array();
+  totalPoints:number = 0;
   index: number = 0;
   indexList: number = 0;
   toasterText: string = '';
@@ -42,6 +46,11 @@ export class FiveWordsComponent implements OnInit {
     this.statesList[2] = Object.assign([], this.states);
     this.statesList[3] = Object.assign([], this.states);
     this.statesList[4] = Object.assign([], this.states);
+
+    for (let i = 0; i < this.pointsList.length; i++) {
+      this.pointsList[i] = Object.assign([], this.points);
+    }
+    this.points = this.pointsList[0];
   }
 
   changeColors() {
@@ -90,8 +99,27 @@ export class FiveWordsComponent implements OnInit {
 
   async pressEnter() {
     if (await this.validateWord()) {
+      this.calculatePoints();
       this.goToNextWord();
     }
+  }
+
+  calculatePoints() {
+    for (let i = 0; i < this.currentWord.length; i++) {
+      let letter = this.currentWord[i];
+
+      if (this.frequency[letter]) {
+        this.frequency[letter] += 1;
+        this.points[i] = Math.max(3 - this.frequency[letter], 0); 
+      } else {
+        this.frequency[letter] = 1;
+        this.points[i] = 2;
+      }
+
+      this.totalPoints += this.points[i];
+    }
+
+    console.log(this.totalPoints);
   }
 
   goToNextWord() {
@@ -99,6 +127,7 @@ export class FiveWordsComponent implements OnInit {
     this.indexList++;
     this.currentWord = this.wordList[this.indexList];
     this.states = this.statesList[this.indexList];
+    this.points = this.pointsList[this.indexList];
   }
 
   async validateWord(): Promise<boolean> {
@@ -107,13 +136,12 @@ export class FiveWordsComponent implements OnInit {
       return false;
     }
 
-    for(let word of this.wordList) {
-      if(word.join('') === this.currentWord.join('')) {
-        
+    for (let word of this.wordList) {
+      if (word.join('') === this.currentWord.join('')) {
       }
     }
 
-    if (! await this.gss.isAWord(this.currentWord.join(''))) {
+    if (!(await this.gss.isAWord(this.currentWord.join('')))) {
       this.toasterText = 'Not in word list';
       return false;
     }
