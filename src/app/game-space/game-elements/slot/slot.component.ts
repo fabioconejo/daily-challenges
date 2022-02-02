@@ -9,6 +9,7 @@ export class SlotComponent implements OnInit {
   @Input() letter: string = '';
   @Input() state: string;
   @Input() position: number;
+  @Input() points: string = '';
   animation: string = 'idle';
   localState: string;
 
