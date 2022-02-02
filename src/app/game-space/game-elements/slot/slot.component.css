@@ -2,6 +2,7 @@
   display: inline-block;
 }
 .tile {
+  position: relative;
   width: 100%;
   display: inline-flex;
   justify-content: center;
@@ -53,6 +54,13 @@
 .tile[data-animation='pop'] {
   animation-name: PopIn;
   animation-duration: 100ms;
+}
+
+.points {
+  position: absolute;
+  font-size: 0.8rem;
+  right: 5%;
+  bottom: -10%;
 }
 
 @keyframes PopIn {
