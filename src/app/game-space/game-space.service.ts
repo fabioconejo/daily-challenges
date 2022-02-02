@@ -9,13 +9,17 @@ export class GameSpaceService {
   private supabase;
 
   constructor() {
-    this.supabase = createClient(environment.supabase.supabaseUrl, environment.supabase.supabaseKey);
+    this.supabase = createClient(
+      environment.supabase.supabaseUrl,
+      environment.supabase.supabaseKey
+    );
   }
 
   async isAWord(word: string): Promise<boolean> {
     let result = await this.supabase
       .from('dictionary')
-      .select('*').eq('word', word);
+      .select('*')
+      .eq('word', word);
 
     return result.data.length !== 0;
   }
