@@ -12,7 +12,7 @@ import {
   styleUrls: ['./word.component.css'],
 })
 export class WordComponent implements OnInit, OnChanges {
-  @Input() wordLength: string;
+  @Input() wordLength: number;
   @Input() letters: any;
   @Input() points: any = [];
   @Input() states: any;
@@ -22,7 +22,7 @@ export class WordComponent implements OnInit, OnChanges {
   ngOnInit() {
     document.documentElement.style.setProperty(
       '--word-length',
-      this.wordLength
+      this.wordLength + ""
     );
   }
 

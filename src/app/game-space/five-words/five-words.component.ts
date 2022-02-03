@@ -11,7 +11,7 @@ export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
   statesList: any = new Array(5);
   pointsList: any = new Array(5);
-  wordTemplate: string = '   ck';
+  wordTemplate: string = '    ';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   states: any = new Array(this.currentWordLength);
@@ -22,7 +22,9 @@ export class FiveWordsComponent implements OnInit {
   indexList: number = 0;
   toasterText: string = '';
 
-  constructor(private gss: GameSpaceService) {}
+  constructor(private gss: GameSpaceService) {
+    console.log(this.currentWordLength);
+  }
 
   ngOnInit() {
     this.changeColors();

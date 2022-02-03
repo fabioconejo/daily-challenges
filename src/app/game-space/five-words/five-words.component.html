@@ -5,31 +5,31 @@
 <div id="board-container">
   <div id="board" style="width: 350px; height: 420px;">
     <game-word
-      wordLength="5"
+      [wordLength]="this.currentWordLength"
       [letters]="this.wordList[0]"
       [states]="this.statesList[0]"
       [points]="this.pointsList[0]"
     ></game-word>
     <game-word
-      wordLength="5"
+      [wordLength]="this.currentWordLength"
       [letters]="this.wordList[1]"
       [states]="this.statesList[1]"
       [points]="this.pointsList[1]"
     ></game-word>
     <game-word
-      wordLength="5"
+      [wordLength]="this.currentWordLength"
       [letters]="this.wordList[2]"
       [states]="this.statesList[2]"
       [points]="this.pointsList[2]"
     ></game-word>
     <game-word
-      wordLength="5"
+      [wordLength]="this.currentWordLength"
       [letters]="this.wordList[3]"
       [states]="this.statesList[3]"
       [points]="this.pointsList[3]"
     ></game-word>
     <game-word
-      wordLength="5"
+      [wordLength]="this.currentWordLength"
       [letters]="this.wordList[4]"
       [states]="this.statesList[4]"
       [points]="this.pointsList[4]"
