@@ -45,6 +45,15 @@
   overflow: hidden;
 }
 
+.points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: var(--slot-brd);
+  font-weight: bold;
+}
+
 @keyframes Bounce {
   0%,
   20% {
