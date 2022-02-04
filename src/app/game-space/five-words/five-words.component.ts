@@ -11,13 +11,13 @@ export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
   statesList: any = new Array(5);
   pointsList: any = new Array(5);
-  wordTemplate: string = '     ';
+  wordTemplate: string = 'p    ';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   states: any = new Array(this.currentWordLength);
   points: any = new Array(this.currentWordLength);
   frequency: any = new Array();
-  totalPoints:number = 0;
+  totalPoints: number = 0;
   index: number = 0;
   indexList: number = 0;
   toasterText: string = '';
@@ -112,7 +112,7 @@ export class FiveWordsComponent implements OnInit {
 
       if (this.frequency[letter]) {
         this.frequency[letter] += 1;
-        this.points[i] = Math.max(3 - this.frequency[letter], 0); 
+        this.points[i] = Math.max(3 - this.frequency[letter], 0);
       } else {
         this.frequency[letter] = 1;
         this.points[i] = 2;
