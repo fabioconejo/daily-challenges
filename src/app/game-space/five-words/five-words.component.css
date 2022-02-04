@@ -42,7 +42,7 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .points {
@@ -51,8 +51,13 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  background-color: var(--slot-brd);
+  border: 2px solid var(--slot-brd);
   font-weight: bold;
+}
+
+.text-points {
+  font-size: 1rem;
+  float: left;
 }
 
 @keyframes Bounce {

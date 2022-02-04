@@ -11,7 +11,7 @@ export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
   statesList: any = new Array(5);
   pointsList: any = new Array(5);
-  wordTemplate: string = 'p    ';
+  wordTemplate: string = '  e  ';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   states: any = new Array(this.currentWordLength);
@@ -22,9 +22,7 @@ export class FiveWordsComponent implements OnInit {
   indexList: number = 0;
   toasterText: string = '';
 
-  constructor(private gss: GameSpaceService) {
-    console.log(this.currentWordLength);
-  }
+  constructor(private gss: GameSpaceService) {}
 
   ngOnInit() {
     this.changeColors();
@@ -53,6 +51,7 @@ export class FiveWordsComponent implements OnInit {
       this.pointsList[i] = Object.assign([], this.points);
     }
     this.points = this.pointsList[0];
+
   }
 
   changeColors() {
@@ -112,10 +111,10 @@ export class FiveWordsComponent implements OnInit {
 
       if (this.frequency[letter]) {
         this.frequency[letter] += 1;
-        this.points[i] = Math.max(3 - this.frequency[letter], 0);
+        this.points[i] = Math.max(3 - this.frequency[letter], 0) * 100;
       } else {
         this.frequency[letter] = 1;
-        this.points[i] = 2;
+        this.points[i] = 2 * 100;
       }
 
       this.totalPoints += this.points[i];

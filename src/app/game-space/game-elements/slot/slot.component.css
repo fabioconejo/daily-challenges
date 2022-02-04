@@ -28,6 +28,11 @@
     font-size: 1em;
     line-height: 1em;
   }
+
+  .points {
+    font-size: 0.5rem;
+    line-height: 0.5rem;
+  }
 }
 
 .tile[data-state='empty'] {
@@ -58,7 +63,7 @@
 
 .points {
   position: absolute;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   right: 5%;
   bottom: -15%;
 }

@@ -1,6 +1,8 @@
 <game-header gameName="5 WORDS" (tutorial)="loadOverlay()"></game-header>
 
-<div class="toaster" id="game-toaster"><toaster [(text)]="toasterText"></toaster></div>
+<div class="toaster" id="game-toaster">
+  <toaster [(text)]="toasterText"></toaster>
+</div>
 
 <div id="board-container">
   <div id="board" style="width: 350px; height: 420px;">
@@ -35,7 +37,7 @@
       [points]="this.pointsList[4]"
     ></game-word>
 
-    <div class="points">{{totalPoints}} / 50</div>
+    <div class="points">{{ totalPoints }}</div>
   </div>
 </div>
 
@@ -56,8 +58,8 @@
       </p>
       <p>Each letter gives you points, these points follow the rules bellow:</p>
       <ul>
-        <li><strong>2 points</strong> for each unique letter;</li>
-        <li><strong>1 point</strong> for each repeated letter (once);</li>
+        <li><strong>200 points</strong> for each unique letter;</li>
+        <li><strong>100 points</strong> for each repeated letter (once);</li>
         <li>
           <strong>0 points</strong> for each repeated letter (twice or more).
         </li>
