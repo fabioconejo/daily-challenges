@@ -11,7 +11,7 @@ export class FiveWordsComponent implements OnInit {
   wordList: any = new Array(5);
   statesList: any = new Array(5);
   pointsList: any = new Array(5);
-  wordTemplate: string = '  e  ';
+  wordTemplate: string = '    ';
   currentWordLength: number = this.wordTemplate.length;
   currentWord: any = new Array(this.currentWordLength);
   states: any = new Array(this.currentWordLength);
